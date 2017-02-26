@@ -3,6 +3,7 @@
 * Nice colors
 * Modern symbols and syntax (Associations <| |>, /* etc)
 * Jump-to-definition for := definitions
+* Cmd+click does go-to-definition on symbol under cursor
 
 No idea how you're *supposed* to share Sublime text packages, and I don't have time to find out, but colleagues want to use this, so here's how to do it on OS X assuming this repo is at "~/git/WLSublime", haven't actually tested this from-scratch though. 
 
