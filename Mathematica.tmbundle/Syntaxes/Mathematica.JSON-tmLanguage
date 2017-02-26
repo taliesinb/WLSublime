@@ -1,0 +1,640 @@
+{
+    "patterns": [
+        {
+            "include": "#static_symbols"
+        }, 
+        {
+            "include": "#global_variables"
+        }, 
+        {
+            "include": "#global_variable_definitions"
+        }, 
+        {
+            "include": "#top_level_definition"
+        }, 
+        {
+            "include": "#builtin_symbols"
+        }, 
+        {
+            "include": "#gu_symbols"
+        }, 
+        {
+            "include": "#dangerous_symbols"
+        }, 
+        {
+            "include": "#static_assoc_lookup"
+        }, 
+        {
+            "include": "#scoping_functions"
+        }, 
+        {
+            "include": "#line_declarations"
+        }, 
+        {
+            "include": "#builtin_operators"
+        }, 
+        {
+            "include": "#pattern_variables"
+        }, 
+        {
+            "include": "#array_index"
+        }, 
+        {
+            "include": "#string"
+        }, 
+        {
+            "include": "#number"
+        }, 
+        {
+            "include": "#list"
+        }, 
+        {
+            "include": "#association"
+        }, 
+        {
+            "include": "#emptyfunction"
+        }, 
+        {
+            "include": "#function"
+        }, 
+        {
+            "include": "#prepostfunction"
+        }, 
+        {
+            "include": "#symbol"
+        },                         
+        {
+            "include": "#comment"
+        }
+    ], 
+    "keyEquivalent": "^~M", 
+    "uuid": "EB28CBAC-55D2-4CAD-B996-2F4A44FDF2B8", 
+    "scopeName": "source.mathematica", 
+    "repository": {
+        "number": {
+            "match": "\\b(\\d+(\\.\\d*)?)", 
+            "name": "constant.numeric.mathematica"
+        }, 
+        "prepostfunction": {
+            "patterns": [
+                {
+                    "match": "[a-zA-Z0-9]+(?=\\s*/?@{1,3}\\s*)", 
+                    "name": "meta.function-call.mathematica"
+                }, 
+                {
+                    "match": "(?<=// )[a-zA-Z0-9]+", 
+                    "name": "meta.function-call.mathematica"
+                }
+            ]
+        }, 
+        "array_index": {
+            "patterns": [
+                {
+                    "include": "$self"
+                }, 
+                {
+                    "match": ",", 
+                    "name": "punctuation.separator.part.mathematica"
+                }
+            ], 
+            "end": "\\]\\]", 
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.part.begin.mathematica"
+                }
+            }, 
+            "begin": "\\[\\[", 
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.part.end.mathematica"
+                }
+            }, 
+            "name": "meta.structure.part.mathematica"
+        }, 
+        "builtin_symbols": {
+            "match": "(\\b|(?<=_))(Above|Abs|Absolute|AbsoluteCurrentValue|AbsoluteFileName|AbsoluteOptions|AbsoluteThickness|AbsoluteTime|AbsoluteTiming|AccountingForm|Accumulate|Accuracy|AccuracyGoal|ActionMenu|ActionMenuBox|Activate|Active|AddTo|AdjacencyGraph|AdjustmentBox|After|Alignment|AllowedHeads|AllTrue|Alternatives|AmbiguityFunction|AmbiguityList|And|Animator|AnimatorBox|Annotation|AnySubset|AnyTrue|Apart|APIFunction|Appearance|AppearanceRules|Append|AppendTo|Apply|ArgMax|ArgumentCountQ|Array|ArrayDepth|ArrayFlatten|ArrayPlot|ArrayQ|ArrayReshape|ArrayRules|Arrow|Arrowheads|AspectRatio|Assert|AssociateTo|Association|AssociationFormat|AssociationMap|AssociationQ|AssociationThread|AtomQ|Attributes|Autocomplete|AutocompletionFunction|AutoScroll|AutoSubmitting|Axes|AxesLabel|AxesOrigin|Axis|Background|Backward|BarChart|BarcodeRecognize|BaseForm|Baseline|BaselinePosition|BaseStyle|Because|Beep|Before|Begin|BeginPackage|Below|BesselK|Beta|BezierCurve|BezierFunction|BinaryFormat|BinaryReadList|BinaryWrite|BinLists|BitAnd|BitShiftLeft|BitShiftRight|BitXor|Black|Blank|BlankNullSequence|BlankSequence|Blend|BlockRandom|Blue|Bold|Boole|BooleanQ|Booleans|BooleanStrings|Bottom|BoxBaselineShift|BoxData|Boxes|BoxForm|BoxFrame|BoxMargins|BoxWhiskerChart|Break|Brown|BSplineCurve|BSplineFunction|BubbleChart|Button|ButtonBox|ButtonCell|Byte|ByteArray|ByteArrayQ|ByteCount|Cancel|CancelButton|CandlestickChart|CanonicalName|Capitalize|Case|Cases|Catalan|Catch|Catenate|CDF|Ceiling|Cell|CellAutoOverwrite|CellBracketOptions|CellContext|CellDingbat|CellFrame|CellFrameLabelMargins|CellFrameLabels|CellFrameMargins|CellGroup|CellGroupData|CellGroupingRules|CellInsertionPointCell|CellMargins|CellPrint|Cells|CellTags|Center|Character|CharacterCounts|CharacterEncoding|CharacterRange|Characters|Check|CheckAbort|Checkbox|CheckboxBar|ChoiceButtons|CholeskyDecomposition|Chop|Circle|CircleTimes|ClassifierFunction|ClassifierInformation|ClassifierMeasurements|ClassifierMeasurementsObject|Classify|ClassPriors|ClearAttributes|Clip|Close|Closed|Closing|CloudBase|CloudConnect|CloudDeploy|CloudExport|CloudGet|CloudObject|CloudPut|CMYKColor|Coefficient|Collect|ColorConvert|ColorData|ColorDataFunction|ColorFunction|ColorFunctionScaling|ColorProfileData|ColorQ|ColorSetter|ColorSetterBox|ColorSlider|ColorSpace|Column|ColumnAlignments|ColumnForm|ColumnSpacings|ColumnWidths|CombinerFunction|Commonest|CommonName|CompatibleUnitQ|CompilationTarget|Compile|CompiledFunction|Complement|Complex|Complexes|Compose|Composition|CompoundElement|CompoundExpression|Compress|CompressedData|Condition|ConformImages|Conjugate|Conjunction|ConstantArray|ConstantImage|Containing|ContainsAll|ContainsAny|ContainsExactly|ContainsNone|ContainsOnly|ContentObject|ContentPadding|Context|Contexts|Continue|ContinuousWaveletData|ContourLabels|ContourPlot|Contours|ContourShading|ContourStyle|Control|CoprimeQ|CopyDirectory|CopyFile|Cosh|Count|CountDistinct|CountDistinctBy|Counts|CountsBy|Covariance|CovarianceFunction|CoxModel|CreateArchive|CreateDirectory|CreateDocument|CreateIntermediateDirectories|CreateManagedLibraryExpression|CreatePalette|CreateSearchIndex|CreateTemporary|CreateUUID|Cross|CubeRoot|CurrentImage|CurrentValue|Cyan|Darker|Dashed|Dashing|Databin|DataDistribution|Dataset|Date|DateDifference|DateFormat|DateList|DateListPlot|DateObject|DatePattern|DateRange|DateString|Debug|Decapitalize|Decrement|Decrypt|Default|DefaultBaseStyle|DefaultButton|DefaultValue|DefaultValues|Defer|Definition|Degree|Del|Delete|DeleteCases|DeleteContents|DeleteDirectory|DeleteDuplicates|DeleteDuplicatesBy|DeleteFile|DeleteMissing|DeleteSearchIndex|DeleteStopwords|DelimitedSequence|Delimiter|Delimiters|Denominator|DensityHistogram|Deploy|Deployed|Depth|Derivative|Det|Diagonal|DiagonalMatrix|Dialog|DialogInput|DialogReturn|DictionaryLookup|Differences|DigitBlock|DigitCharacter|DimensionReduce|DimensionReducerFunction|DimensionReduction|Dimensions|DiracDelta|DirectedEdge|DirectedEdges|Directive|Directory|DirectoryName|DirectoryQ|DiscreteWaveletData|DisjointQ|Disk|Dispatch|Display|DisplayForm|DisplayFunction|DisplayTemporary|DistanceFunction|Distributed|DistributionChart|Divide|Dividers|Divisible|Do|DockedCells|Dot|DotDashed|Dotted|Downsample|DownValues|Drop|DumpSave|DuplicateFreeQ|Dynamic|DynamicBox|DynamicModule|DynamicModuleBox|DynamicModuleValues|DynamicWrapper|EdgeAdd|EdgeDetect|EdgeLabels|EdgeList|EdgeRenderingFunction|EdgeShapeFunction|EdgeStyle|Editable|EditDistance|Eigensystem|Eigenvectors|Element|ElidedForms|EmbedCode|EmbeddingObject|Empty|Enabled|Encode|Encrypt|EncryptedObject|End|EndOfFile|EndOfLine|EndOfString|EndPackage|EngineeringForm|Enter|Entity|EntityClass|EntityList|EntityProperty|EntityTypeName|EntityValue|Epilog|Equal|Equivalent|EuclideanDistance|EvaluationCell|EvaluationNotebook|Evaluator|EvenQ|EventData|EventHandler|EventHandlerTag|EventSeries|ExampleData|Except|Exit|Exp|Expand|ExpandAll|ExpandFileName|Expectation|Export|ExportForm|ExportString|Expression|ExpressionCell|Extract|ExtractArchive|Factor|Factorial|FactorInteger|FailureAction|FeatureNames|FeatureTypes|FieldHint|FieldMasked|FieldSize|File|FileBaseName|FileByteCount|FileDate|FileExistsQ|FileExtension|FileFormat|FileLine|FileName|FileNameDrop|FileNameJoin|FileNames|FileNameSetter|FileNameSplit|FileNameTake|FileTemplate|FileTemplateApply|FileType|Filling|FilterRules|FinancialData|Find|FindArgMax|FindCycle|FindDivisions|FindFile|FindList|First|FirstCase|FirstPosition|FittedModel|FixedPoint|Flat|Flatten|FlattenAt|FlipView|Floor|Fold|FoldList|FontColor|FontFamily|FontSize|FontSlant|FontTracking|FontVariations|FontWeight|For|ForAll|FormatValues|FormFunction|FormLayoutFunction|FormObject|FormTheme|Forward|FractionalPart|FractionBox|Frame|FrameBox|Framed|FrameLabel|FrameMargins|FrameStyle|FrameTicks|FrameTicksStyle|FreeQ|Friday|FromCharacterCode|FromDigits|FrontEndExecute|FrontEndObject|FrontEndResource|FrontEndToken|Full|FullDefinition|FullForm|FullOptions|FullRegion|Gamma|GatherBy|GCD|General|GenerateAsymmetricKeyPair|GeneratedCell|GenerateDocument|GenerateSymmetricKey|Generic|GeoGraphics|GeoIdentify|GeoListPlot|GeoLocation|GeoMarker|GeometricMean|GeoModel|GeoNearest|GeoPosition|GeoProjection|GeoRange|GeoRegionValuePlot|GeoWithinQ|Get|GetEnvironment|Goto|Gradient|GradientFilter|GradientOrientationFilter|GrammarApply|Graph|GraphData|Graphics|GraphicsBox|GraphicsComplex|GraphicsComplexBox|GraphicsGrid|GraphicsGroup|GraphicsGroupBox|GraphLayout|GraphPlot|Gray|GrayLevel|Greater|GreaterEqual|GreaterFullEqual|Green|Grid|GridBox|GridBoxAlignment|GridBoxBackground|GridBoxDividers|GridBoxFrame|GridBoxItemSize|GridBoxSpacings|GridFrameMargins|GridLines|GridLinesStyle|GroupBy|HannWindow|Hash|Head|Heads|Here|HexadecimalCharacter|Histogram|HistogramList|HomeDirectory|Horizontal|HTTPRedirect|HTTPRequestData|Hue|Hyperlink|HypothesisTestData|Identity|IdentityMatrix|If|IgnoreCase|Im|Image|ImageAdd|ImageCapture|ImageChannels|ImageCollage|ImageColorSpace|ImageCompose|ImageCrop|ImageData|ImageDimensions|ImageFormattingWidth|ImageIdentify|ImageInstanceQ|ImageMargins|ImageMultiply|ImagePad|ImagePadding|ImageQ|ImageReflect|ImageResize|ImageResolution|ImageSize|ImageSizeAction|ImageSizeMultipliers|ImageSizeRaw|ImageSubtract|ImageTake|ImageType|Import|ImportString|In|Inactivate|Inactive|Increment|Indent|Indeterminate|IndeterminateThreshold|Indexed|Information|Inherited|Initialization|Inner|Input|InputField|InputFieldBox|InputForm|InputStream|Insert|InsertionFunction|InsertLinebreaks|Inset|Install|InstallService|Integer|IntegerDigits|IntegerLength|IntegerPart|IntegerQ|Integers|IntegerString|Interleaving|InterpolatingFunction|Interpolation|InterpolationOrder|Interpretation|InterpretationBox|InterpretationFunction|Interpreter|InterquartileRange|IntersectingQ|Intersection|Interval|IntervalMemberQ|Inverse|Invisible|Italic|Item|ItemBox|ItemSize|Join|JoinAcross|Joined|Kernels|Key|KeyDrop|KeyExistsQ|KeyIntersection|KeyMap|Keys|KeySelect|KeySort|KeySortBy|KeyTake|KeyUnion|KeyValueMap|KnownUnitQ|Kurtosis|Label|Labeled|LabelStyle|Language|LanguageIdentify|LaplaceDistribution|Large|Larger|Last|LayeredGraphPlot|LeafCount|Left|LeftArrow|Legended|LegendFunction|LegendMarkerSize|Length|LengthWhile|Less|LessEqual|LessFullEqual|LetterCharacter|LetterCounts|LetterNumber|LetterQ|Level|LibraryFunction|LibraryFunctionLoad|LibraryLoad|LiftingFilterData|LightBlue|LightBrown|LightCyan|Lighter|LightGray|LightGreen|LightMagenta|LightOrange|LightPink|LightPurple|LightRed|LightYellow|Likelihood|Limit|Line|LinearGradientImage|LinearSolve|LinearSolveFunction|LinebreakAdjustments|LineBreakWithin|LineIndent|LineIndentMaxFraction|LineSpacing|LinkObject|LinkReadyQ|LinkService|List|Listable|ListContourPlot|ListCurvePathPlot|ListDensityPlot|ListFormat|ListLineIntegralConvolutionPlot|ListLinePlot|ListLogLinearPlot|ListLogLogPlot|ListLogPlot|ListPicker|ListPlot|ListPolarPlot|ListQ|ListStreamDensityPlot|ListStreamPlot|ListVectorDensityPlot|ListVectorPlot|LocalObject|LocatorPaneBox|Locked|Log|LogisticSigmoid|LogLikelihood|Longest|LongLeftRightArrow|LongRightArrow|Lookup|LowerCaseQ|MachineName|MachinePrecision|Magenta|Magnification|Magnify|MakeExpression|ManagedLibraryExpressionID|Manipulate|Manipulator|MantissaExponent|Manual|Map|MapAt|MapIndexed|MapThread|MatchQ|MathMLForm|MatrixForm|MatrixPlot|MatrixQ|Max|MaximalBy|MaxIterations|MaxMemoryUsed|Mean|MeanDeviation|Median|Medium|MemberQ|MemoryInUse|MenuView|Merge|Mesh|Message|MessageName|Messages|Method|Min|MinimalBy|Minimize|MinMax|Minus|Missing|MissingBehavior|MissingQ|MissingString|MixedRadix|Mod|Mode|Monday|Most|MouseAppearance|MouseAppearanceTag|NameQ|Names|NArgMax|Nearest|NearestFunction|Needs|Negative|Nest|NestWhile|NestWhileList|Next|NIntegrate|NMaximize|NMinimize|NominalVariables|NonCommutativeMultiply|NoneTrue|NonlinearModelFit|NonNegative|NonPositive|Norm|Normal|NormalDistribution|Not|Notebook|NotebookClose|NotebookDelete|NotebookDirectory|NotebookFind|NotebookGet|NotebookImport|NotebookLocate|NotebookObject|NotebookPut|NotebookRead|Notebooks|NotebookTemplate|NotebookWrite|Now|NSolve|NullRecords|Number|NumberForm|NumberMarks|NumberPoint|NumberQ|NumberSeparator|NumberSigns|NumberString|Numerator|NumericFunction|NumericQ|NValues|OddQ|Off|Offset|On|OneIdentity|Opacity|Open|Opener|OpenerBox|OpenerView|OpenRead|OpenWrite|OperatingSystem|OptimumFlowData|Optional|OptionQ|Options|OptionsPattern|OptionValue|Or|Orange|Order|OrderedQ|Ordering|Orthogonalize|OrthogonalMatrixQ|Out|Outer|OutputForm|OutputGrouping|OutputStream|Overlaps|OverlayBox|OverwriteTarget|OwnValues|PaddedForm|Padding|PadLeft|PadRight|PageWidth|PairedBarChart|Pane|PaneBox|Panel|PanelBox|PaneSelectorBox|Parallelization|ParallelMap|Parameter|ParametricFunction|ParentList|Part|PartBehavior|Partition|PassEventsDown|PassEventsUp|Paste|Path|Pattern|PatternSequence|PatternTest|Pause|PDF|PerformanceGoal|Permissions|Permutations|Pi|Pick|Piecewise|PiecewiseExpand|PieChart|Pink|PixelConstrained|Plain|Plot|PlotLabel|PlotLegends|PlotMarkers|PlotRange|PlotRangeClipping|PlotRangePadding|PlotStyle|Pluralize|Plus|Point|PointLegend|PointSize|Polygon|PopupMenu|PopupMenuBox|Position|PositionIndex|Positive|PositiveDefiniteMatrixQ|PossibleZeroQ|Postfix|Power|PowerExpand|PowerMod|PowerRange|Precision|PrecisionGoal|Predict|PredictorFunction|PredictorInformation|PredictorMeasurements|PredictorMeasurementsObject|Prefix|Prepend|PrependTo|Previous|Prime|PrimeQ|PrincipalComponents|PrintableASCIIQ|PrintForm|PrintTemporary|PrivateKey|Probability|ProbabilityDistribution|ProbabilityPlot|ProbabilityScalePlot|Processes|Product|ProgressIndicator|ProgressIndicatorBox|Projection|Properties|Property|PropertyList|PropertyValue|Protected|PseudoInverse|PublicKey|Purple|Put|Quantile|QuantilePlot|Quantity|QuantityForm|QuantityMagnitude|QuantityQ|QuantityUnit|QuantityVariable|QuantityVariableCanonicalUnit|Quartiles|Query|Quit|Quotient|RadioButton|RadioButtonBar|Random|RandomChoice|RandomColor|RandomInteger|RandomPrime|RandomReal|RandomSample|RandomSeed|RandomVariate|Range|RankedMax|RankedMin|Raster|RasterBox|Rasterize|Rational|Raw|RawArray|RawBoxes|Re|Read|ReadList|ReadProtected|ReadString|Real|RealDigits|Reals|Reap|RecognitionPrior|RecognitionThreshold|Record|RecordSeparators|Rectangle|RectangleChart|Red|Refine|Refresh|RegionDistanceFunction|RegionEmbeddingDimension|RegionMember|RegionMemberFunction|RegionNearestFunction|RegionPlot|RegionQ|RegularExpression|Regularization|Reinstall|RemoveAlphaChannel|Removed|RemoveDiacritics|RenameFile|Repeated|RepeatedNull|RepeatedTiming|RepeatingElement|Replace|ReplaceAll|ReplaceList|ReplacePart|ReplaceRepeated|Rescale|ResetDirectory|Rest|Restricted|Return|Reverse|RGBColor|Riffle|Right|RightArrow|RightComposition|RightTee|Root|RootMeanSquare|Rotate|RotateLeft|Round|RoundingRadius|Row|RowBox|RowLines|RowMinHeight|RowSpacings|Rule|RuleDelayed|Run|RunProcess|RunThrough|RuntimeAttributes|RuntimeOptions|SameQ|SameTest|SampledSoundFunction|SampledSoundList|Saturday|Save|Saveable|Scale|Scaled|ScalingFunctions|Scan|ScheduledTaskObject|ScientificForm|SearchIndexObject|SearchIndices|SectionGrouping|SectorChart|SeedRandom|Select|Selectable|SelectedNotebook|SelectFirst|Selection|SelectionEvaluate|SelectionMove|SelectWithContents|SelfLoopStyle|SemanticImport|SemanticImportString|Sequence|SequenceForm|SessionTime|Set|SetAccuracy|UpSet|UpSetDelayed|SetDelayed|SetDirectory|SetOptions|SetPrecision|SetProperty|SetSelectedNotebook|SetStreamPosition|Setter|SetterBar|SetterBox|Setting|Shallow|Short|Shortest|Show|ShowAutoStyles|ShowCellBracket|ShowGroupOpener|ShowStringCharacters|Sign|Sin|SingularValueDecomposition|SingularValueList|SingularValues|Skeleton|Skewness|SkewNormalDistribution|Skip|Slider|SliderBox|SlideView|Slot|SlotSequence|Small|Smaller|SmoothDensityHistogram|SmoothHistogram|Snippet|Solve|Sort|SortBy|Sound|SoundNote|Sow|Spacer|Spacings|Span|SpanFromAbove|SpanFromBoth|SpanFromLeft|SpanMaxSize|SpanMinSize|SparseArray|SpecificityGoal|Spectrogram|SpectrogramArray|Splice|SplineClosed|Split|SplitBy|Sqrt|Square|Stack|StandardDeviation|StandardForm|Standardize|StartOfLine|StartOfString|StreamPosition|Streams|String|StringCases|StringContainsQ|StringCount|StringDelete|StringDrop|StringEndsQ|StringExpression|StringExtract|StringForm|StringFormat|StringFreeQ|StringInsert|StringJoin|StringLength|StringMatchQ|StringPadLeft|StringPadRight|StringPartition|StringPosition|StringQ|StringRepeat|StringReplace|StringReverse|StringRiffle|StringSplit|StringStartsQ|StringTake|StringTemplate|StringToStream|StringTrim|StripOnInput|StructuredArray|Style|StyleBox|Subscript|SubscriptBox|SubsetQ|Subsets|Subsuperscript|SubsuperscriptBox|Subtract|SubtractFrom|SubValues|Sum|Sunday|Superscript|SuperscriptBox|Surd|SurvivalModel|SwatchLegend|Switch|Symbol|SymbolName|SymmetricKey|SymmetricMatrixQ|Syntax|SyntaxInformation|SyntaxLength|SyntaxQ|SystemOpen|Table|TableDepth|TableDirections|TableForm|TableHeadings|TableSpacing|TabView|TagBox|TagSet|TagSetDelayed|Take|TakeLargest|TakeLargestBy|TakeSmallest|TakeSmallestBy|TakeWhile|Tally|Tan|Tanh|TemplateApply|TemplateBox|TemplateExpression|TemplateIf|TemplateObject|TemplateSequence|TemplateSlot|TemplateUnevaluated|TemplateVerbatim|TemplateWith|TemporalData|Temporary|TestID|TestReport|TeXForm|Text|TextAlignment|TextCases|TextCell|TextData|TextJustification|TextLine|TextPosition|TextSearch|TextSearchReport|TextSentences|TextString|TextWords|Therefore|Thickness|Thin|Thread|Threshold|Through|Thumbnail|Thursday|Ticks|TimeConstrained|TimeConstraint|TimeFormat|TimeObject|Times|TimeSeries|TimeSeriesModel|TimeZone|Tiny|ToCharacterCode|Today|ToExpression|ToFileName|Toggler|TogglerBar|Tolerance|ToLowerCase|Tomorrow|Tooltip|TooltipBox|TooltipDelay|Top|TopologicalSort|ToString|Total|ToUpperCase|Trace|TrackedSymbols|TraditionalForm|TransformedDistribution|Translate|Transparent|Transpose|TreeForm|TreePlot|Triangle|TrueQ|Try|Tuesday|Tuples|Uncompress|Undefined|Underlined|UnderscriptBox|Unequal|Union|Unique|UnitConvert|UnitDimensions|Unitize|UnitStep|UnixTime|UnsameQ|Unset|Update|UpdateDynamicObjects|UpdateInterval|UpdateSearchIndex|UpperCaseQ|UpValues|URL|URLBuild|URLDecode|URLDispatcher|URLEncode|URLExecute|URLExistsQ|URLExpand|URLFetch|URLParse|URLQueryDecode|URLQueryEncode|URLShorten|Using|UtilityFunction|ValidationSet|Value|ValueQ|Values|Variables|Variance|VectorQ|Vectors|Verbatim|Verbose|VerificationTest|Version|VersionNumber|VertexColors|VertexInComponent|VertexLabels|VertexList|VertexOutComponent|VertexRenderingFunction|VertexShape|VertexShapeFunction|VertexSize|VertexStyle|Vertical|VerticalSlider|Visible|WaitUntil|Webpage|Wednesday|WeightedData|Weights|Which|While|White|Whitespace|WhitespaceCharacter|WikipediaData|WindowMargins|WindowSize|WindowTitle|Word|WordBoundary|WordCharacter|WordCloud|WordCount|WordCounts|WordData|WordStem|Write|WriteString|XMLElement|XMLTemplate|Yellow|Yesterday)\\b", 
+            "name": "support.function-call.mathematica.system"
+        }, 
+        "gu_symbols": {
+            "match": "(\\b|(?<=_))(Match|SetUsage|NNSetUsage)\\b", 
+            "name": "support.function-call.mathematica.system"
+        }, 
+        "string": {
+            "patterns": [
+                {
+                    "match": "\\\\\\[[a-zA-Z]+\\]", 
+                    "name": "constant.character.escape.untitled"
+                }, 
+                {
+                    "match": "\\\\.", 
+                    "name": "constant.character.escape.untitled"
+                }
+            ], 
+            "begin": "\"", 
+            "end": "\"",
+            "name": "string.outer.quoted.double.mathematica",
+            "contentName": "string.quoted.double.mathematica"
+        }, 
+        "emptyfunction": {
+            "captures": {
+                "2": {
+                    "name": "punctuation.function-call.empty.begin.mathematica"
+                }, 
+                "3": {
+                    "name": "meta.scope.between_empty_brackets"
+                }, 
+                "1": {
+                    "name": "meta.function-call.empty.mathematica"
+                }
+            }, 
+            "match": "((?:[a-zA-Z]+`)*(?:[a-zA-Z$][a-zA-Z0-9$]*))(\\[)(\\])", 
+            "name": "meta.structure.function-call.empty.mathematica"
+        }, 
+        "global_variables": {
+            "patterns": [
+                {
+                    "match": "^\\$[a-zA-Z][a-zA-Z0-9]+(?= :?=)", 
+                    "name": "entity.name.function.global.variable.mathematica"
+                }, 
+                {
+                    "match": "\\$[a-zA-Z0-9$]+", 
+                    "name": "global.variable.mathematica"
+                }
+            ]
+        }, 
+        "static_assoc_lookup": {
+            "match": "[a-z][a-zA-Z0-9]*(?=\\[\\\"\\w+\\\"\\])", 
+            "name": "variable.symbol.mathematica"
+        }, 
+        "association": {
+            "patterns": [
+                {
+                    "include": "$self"
+                }, 
+                {
+                    "match": ",", 
+                    "name": "punctuation.separator.list.mathematica"
+                }
+            ], 
+            "begin": "\\<\\|", 
+            "end": "\\|\\>", 
+            "name": "meta.structure.assoc.mathematica"
+        }, 
+        "set_delayed_patterns": {
+            "patterns": [
+                {
+                    "include": "#builtin_symbols"
+                }, 
+                {
+                    "include": "#gu_symbols"
+                }, 
+                {
+                    "include": "#static_symbols"
+                }, 
+                {
+                    "include": "#builtin_operators"
+                }, 
+                {
+                    "include": "#pattern_variables"
+                }, 
+                {
+                    "include": "#dangerous_symbols"
+                }, 
+                {
+                    "include": "#string"
+                }, 
+                {
+                    "include": "#number"
+                }
+            ]
+        }, 
+        "comment": {
+            "patterns": [
+                {
+                    "include": "#comment"
+                }
+            ], 
+            "begin": "\\(\\*", 
+            "end": "\\*\\)", 
+            "name": "comment.block.mathematica"
+        }, 
+        "static_symbols": {
+            "patterns": [
+                {
+                    "match": "\\b(True|False|Null|Automatic|Nothing|All|None|Infinity|DirectedInfinity)\\b", 
+                    "name": "constant.language.mathematica.system"
+                }, 
+                {
+                    "match": "\\$(Failed|Aborted)\\b", 
+                    "name": "support.semidangerous.constant.mathematica.system"
+                }
+            ]
+        }, 
+        "symbol": {
+            "match": "[a-zA-Z$](`[a-zA-Z])*[a-zA-Z0-9$]*\\b", 
+            "name": "variable.symbol.mathematica"
+        }, 
+        "list": {
+            "patterns": [
+                {
+                    "include": "$self"
+                }, 
+                {
+                    "match": ",", 
+                    "name": "punctuation.separator.list.mathematica"
+                }
+            ], 
+            "end": "\\}", 
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.list.begin.mathematica"
+                }
+            }, 
+            "begin": "\\{", 
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.list.end.mathematica"
+                }
+            }, 
+            "name": "meta.structure.list.mathematica"
+        }, 
+        "pattern_variables": {
+            "patterns": [
+                {
+                    "match": "([a-zA-Z]+`)*([a-zA-Z$][a-zA-Z0-9$]*)(?=:)", 
+                    "name": "variable.parameter.mathematica.pattern"
+                }, 
+                {
+                    "match": "([a-zA-Z$][a-zA-Z0-9$]*)_{1,3}", 
+                    "name": "variable.parameter.mathematica.blank"
+                }
+            ]
+        }, 
+        "sqlstring": {
+            "patterns": [
+                {
+                    "include": "#constant_placeholder"
+                }, 
+                {
+                    "include": "#escaped_char"
+                }, 
+                {
+                    "include": "source.sql"
+                }
+            ], 
+            "begin": "\"(?=\\s*(SELECT|INSERT|UPDATE|DELETE|CREATE|REPLACE|ALTER))", 
+            "comment": "double quoted string", 
+            "name": "string.quoted.double.sql.mathematica", 
+            "end": "\""
+        }, 
+        "function": {
+            "patterns": [
+                {
+                    "include": "$self"
+                }, 
+                {
+                    "include": "meta.scope.any.mathematica"
+                }, 
+                {
+                    "match": ",", 
+                    "name": "punctuation.separator.list.mathematica"
+                }
+            ], 
+            "end": "\\]", 
+            "beginCaptures": {
+                "2": {
+                    "name": "punctuation.function-call.begin.mathematica"
+                }, 
+                "1": {
+                    "name": "meta.function-call.mathematica"
+                }
+            }, 
+            "begin": "((?:[a-zA-Z]+`)*[a-zA-Z$][a-zA-Z0-9$]*)(\\[)(?!\\[)", 
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.function-call.end.mathematica"
+                }
+            }, 
+            "name": "meta.structure.function-call.mathematica"
+        }, 
+        "line_declarations": {
+            "match": "(PackageImport|PackageExport|PackageScope)\\[\".*\"\\]", 
+            "name": "meta.package-declaration.mathematica"
+        }, 
+        "scoping_functions": {
+            "match": "\\b(With|Block|Module|Scope|Function|SetUsage|SetArgumentCount|Package)\\b", 
+            "name": "support.scoping.function.mathematica.system"
+        }, 
+        "top_level_definition": {
+            "patterns": [
+                {
+                    "beginCaptures": {
+                        "1": {
+                            "name": "entity.name.function.definition.mathematica"
+                        }
+                    }, 
+                    "begin": "^ *([a-zA-Z][a-zA-Z0-9]+)(?=\\[[^\\n]+:=)", 
+                    "patterns": [
+                        {
+                            "include": "#set_delayed_patterns"
+                        }
+                    ], 
+                    "end": "(:=)"
+                }, 
+                {
+                    "beginCaptures": {
+                        "2": {
+                            "name": "msg.string.mathematica"
+                        }, 
+                        "1": {
+                            "name": "entity.name.function.definition.mathematica"
+                        }
+                    }, 
+                    "begin": "^ *([a-zA-Z][a-zA-Z0-9]+::[a-z0-9]+) = (\"[^\"]+\")", 
+                    "end": "\\n"
+                }, 
+                {
+                    "beginCaptures": {
+                        "1": {
+                            "name": "entity.name.function.definition.mathematica"
+                        }
+                    }, 
+                    "begin": "^ *([a-zA-Z][a-zA-Z0-9]+)(?= /: [^\\n]+:=)", 
+                    "patterns": [
+                        {
+                            "include": "#set_delayed_patterns"
+                        }
+                    ], 
+                    "end": ":="
+                }
+            ]
+        }, 
+        "dangerous_symbols": {
+            "patterns": [
+                {
+                    "match": "\\b(Buzz|Print|EchoRaw|EchoTiming|Tap|EchoTag|EchoHoldTag|Echo|EchoHold|Abort|Throw|Clear|ClearAll|Remove|UnprotectAndClearAll|Unprotect|Protect|ToExpression)\\b", 
+                    "name": "support.dangerous.function.mathematica.system"
+                },
+                {
+                    "match": "\\b(ThrowFailure|ThrowRawFailure|ThrowTaggedFailure|SoftPanic|Panic)\\b", 
+                    "name": "support.dangerous.function.mathematica.system"
+                },
+                {
+                    "match": "\\b(ReturnFailed|ReturnFailure|ReturnTaggedFailure|CatchFailure)\\b", 
+                    "name": "support.semidangerous.function.mathematica.system"
+                }, 
+                {
+                    "match": "\\b(DownValues|OwnValues|SubValues|UpValues|Format|MakeBoxes|ToBoxes|HandlerBlock|InheritedBlock|WithLocalSettings|Quiet|Catch|CatchPanic|FailureQ|Message|Failure|RuleCondition)\\b", 
+                    "name": "support.semidangerous.function.mathematica.system"
+                }, 
+                {
+                    "match": "\\b(SetAttributes|SetHoldFirst|SetHoldAll|SetHoldRest|SetHoldAllComplete)\\b", 
+                    "name": "support.semidangerous.function.mathematica.system"
+                }, 
+                {
+                    "match": "\\b(HoldAll|HoldFirst|HoldRest|HoldAllComplete|SequenceHold|Listable|Flat|Orderless)\\b", 
+                    "name": "support.semidangerous.function.attributes.mathematica.system"
+                }, 
+                {
+                    "match": "\\b(Hold|HoldPattern|HoldForm|HoldMap|HoldSymbolQ|HeldFunctionQ|HoldAtomQ|HoldComplete|ReleaseHold|Unevaluated|Evaluate|Quoted|Unquoted|SemiQuoted|ComposeQuoted|ApplyQuoted)\\b", 
+                    "name": "support.holdiness.function.mathematica.system"
+                }, 
+                {
+                    "match": "\\b(\\w*([pP]anic)\\w*)\\b", 
+                    "name": "support.dangerous.function.mathematica.system"
+                }
+            ]
+        },         
+        "builtin_operators": {
+            "patterns": [
+                {
+                    "match": "\\^:=", 
+                    "name": "keyword.operator.assignment.up_set_delayed"
+                }, 
+                {
+                    "match": "===", 
+                    "name": "keyword.operator.logical.same"
+                }, 
+                {
+                    "match": "=!=", 
+                    "name": "keyword.operator.logical.not_same"
+                }, 
+                {
+                    "match": "\\>\\>\\>", 
+                    "name": "support.semidangerous.keyword.operator.mathematica.put_append"
+                }, 
+                {
+                    "match": "\\*\\^", 
+                    "name": "keyword.operator.arithmetic.scientific_notation"
+                }, 
+                {
+                    "match": ":=", 
+                    "name": "keyword.operator.assignment.set_delayed"
+                }, 
+                {
+                    "match": "\\^=", 
+                    "name": "keyword.operator.assignment.up_set"
+                }, 
+                {
+                    "match": "&&", 
+                    "name": "keyword.operator.logical.and"
+                }, 
+                {
+                    "match": "||", 
+                    "name": "keyword.operator.logical.or"
+                }, 
+                {
+                    "match": "==", 
+                    "name": "keyword.operator.logical.equal"
+                }, 
+                {
+                    "match": "!=", 
+                    "name": "keyword.operator.logical.not_equal"
+                }, 
+                {
+                    "match": "\\>=", 
+                    "name": "keyword.operator.logical.greater_than_or_equal"
+                }, 
+                {
+                    "match": "\\<=", 
+                    "name": "keyword.operator.logical.less_than_or_equal"
+                }, 
+                {
+                    "match": ";;", 
+                    "name": "keyword.operator.mathematica.span"
+                }, 
+                {
+                    "match": "\\.\\.\\.", 
+                    "name": "keyword.operator.mathematica.repeated_null"
+                }, 
+                {
+                    "match": "\\.\\.", 
+                    "name": "keyword.operator.mathematica.repeated"
+                }, 
+                {
+                    "match": "//\\.", 
+                    "name": "keyword.operator.mathematica.replace_repeated"
+                }, 
+                {
+                    "match": "/\\.", 
+                    "name": "keyword.operator.mathematica.replace"
+                }, 
+                {
+                    "match": "\\<-\\>", 
+                    "name": "support.semidangerous.keyword.operator.mathematica.undirected_edge"
+                },                 
+                {
+                    "match": "-\\>", 
+                    "name": "keyword.operator.mathematica.rule"
+                }, 
+                {
+                    "match": ":\\>", 
+                    "name": "keyword.operator.mathematica.rule_delayed"
+                }, 
+                {
+                    "match": "@{1,3}", 
+                    "name": "keyword.operator.mathematica.apply"
+                }, 
+                {
+                    "match": "//@", 
+                    "name": "keyword.operator.mathematica.map_all"
+                }, 
+                {
+                    "match": "/@", 
+                    "name": "keyword.operator.mathematica.map"
+                }, 
+                {
+                    "match": "\\<\\>", 
+                    "name": "keyword.operator.mathematica.string_join"
+                }, 
+                {
+                    "match": "\\<\\<", 
+                    "name": "keyword.operator.mathematica.get"
+                }, 
+                {
+                    "match": "\\>\\>", 
+                    "name": "support.semidangerous.keyword.operator.mathematica.put"
+                }, 
+                {
+                    "match": "/;", 
+                    "name": "keyword.operator.mathematica.condition"
+                }, 
+                {
+                    "match": "/:", 
+                    "name": "keyword.operator.mathematica.tag"
+                }, 
+                {
+                    "match": "//", 
+                    "name": "keyword.operator.mathematica.postfix"
+                }, 
+                {
+                    "match": "~~", 
+                    "name": "keyword.operator.mathematica.string_expression"
+                }, 
+                {
+                    "match": "\\+\\+", 
+                    "name": "keyword.mutoperator.arithmetic.increment"
+                }, 
+                {
+                    "match": "\\+", 
+                    "name": "keyword.operator.arithmetic.plus"
+                }, 
+                {
+                    "match": "--", 
+                    "name": "keyword.mutoperator.arithmetic.decrement"
+                }, 
+                {
+                    "match": "-", 
+                    "name": "keyword.operator.arithmetic.minus"
+                }, 
+                {
+                    "match": "\\*", 
+                    "name": "keyword.operator.arithmetic.times"
+                }, 
+                {
+                    "match": "/\\*", 
+                    "name": "keyword.operator.mathematica.right_compose"
+                }, 
+                {
+                    "match": "@*", 
+                    "name": "keyword.operator.mathematica.left_compose"
+                }, 
+                {
+                    "match": "/", 
+                    "name": "keyword.operator.arithmetic.divide"
+                }, 
+                {
+                    "match": "\\^", 
+                    "name": "keyword.operator.arithmetic.power"
+                }, 
+                {
+                    "match": "!", 
+                    "name": "keyword.operator.logical.not"
+                }, 
+                {
+                    "match": "\\<\\|", 
+                    "name": "punctuation.assoc.begin.datascope.mathematica"
+                }, 
+                {
+                    "match": "\\|\\>", 
+                    "name": "punctuation.assoc.end.datascope.mathematica"
+                }, 
+                {
+                    "match": "\\>", 
+                    "name": "keyword.operator.logical.greater_than"
+                }, 
+                {
+                    "match": "\\<", 
+                    "name": "keyword.operator.logical.less_than"
+                }, 
+                {
+                    "match": "|", 
+                    "name": "keyword.operator.mathematica.alternative"
+                }, 
+                {
+                    "match": "@", 
+                    "name": "keyword.operator.mathematica.prefix"
+                }, 
+                {
+                    "match": "%", 
+                    "name": "keyword.operator.mathematica.percent"
+                }, 
+                {
+                    "match": ";", 
+                    "name": "keyword.operator.mathematica.compound_expression"
+                }, 
+                {
+                    "match": "&", 
+                    "name": "support.scoping.function"
+                }, 
+                {
+                    "match": "#(([a-zA-Z$][a-zA-Z0-9]*)|(\\d*))", 
+                    "name": "variable.parameter.mathematica.slot"
+                }, 
+                {
+                    "match": "[a-zA-Z][a-zA-Z0-9]+::[a-z0-9]+", 
+                    "name": "variable.parameter.mathematica.message"
+                }, 
+                {
+                    "match": "\\?", 
+                    "name": "keyword.operator.mathematica.pattern_test"
+                }, 
+                {
+                    "match": "=\\.", 
+                    "name": "keyword.operator.mathematica.unset"
+                }, 
+                {
+                    "match": "=", 
+                    "name": "keyword.mutoperator.mathematica.set"
+                }
+            ]
+        }
+    }, 
+    "foldingStartMarker": "Begin\\[", 
+    "fileTypes": [
+        "m", 
+        "nb"
+    ], 
+    "name": "Mathematica", 
+    "foldingStopMarker": "End\\["
+}

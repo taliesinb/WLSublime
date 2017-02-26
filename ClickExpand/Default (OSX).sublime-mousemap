@@ -1,0 +1,12 @@
+[
+	{
+		"button": "button1",
+		"modifiers": ["ctrl"],
+		"press_command": "click_expand"
+	},
+	{
+		"button": "button1",
+		"modifiers": ["super"],
+		"press_command": "context_goto_definition"
+	}
+]
