@@ -1,11 +1,17 @@
 # Sublime syntax + color theme for Mathematica / Wolfram Language
 
+## Features
+
 * Nice colors
 * Modern symbols and syntax (Associations <| |>, /* etc)
 * Jump-to-definition for := definitions
 * Cmd+click does go-to-definition on symbol under cursor
 
-No idea how you're *supposed* to share Sublime text packages, and I don't have time to find out, but colleagues want to use this, so here's how to do it on OS X assuming this repo is at "~/git/WLSublime", haven't actually tested this from-scratch though. 
+## Instructions
+
+In the unlikely event that you haven't already, start by installing Package Control. Then use it to install Colorsublime, which we'll use later to switch to Brainon, the custom theme that goes with the syntax definition.
+
+No idea how you're *supposed* to share Sublime text packages, and I don't have time to find out, but colleagues want to use this, so here's how to do it on OS X assuming this repo is at "~/git/WLSublime", haven't actually tested this from-scratch though. If you already have a "Colorsublime - Themes" subfolder, then soft link in the "Brainon" subfolder of this repo into "Colorsublime - Themes". 
 
 ```
 cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/
@@ -14,9 +20,11 @@ ln -s ~/git/WLSublime/ClickExpand ClickExpand
 ln -s ~/git/WLSublime/Mathematica.tmbundle Mathematica.tmbundle
 ```
 
-If you already have a "Colorsublime - Themes" subfolder, then soft link in the "Brainon" subfolder of this repo into "Colorsublime - Themes".
+On Windows 10 you just have to copy the corresponding folders into `C:/Users/yourname/AppData/Roaming/Sublime Text 3/Packages`. Windows seems to hide AppData by default but you can copy it into the location bar in Explorer just fine.
 
-Make sure to switch to use the Brainon color theme, it goes with the syntax.
+Make sure to switch to use the Brainon color theme, it goes with the syntax. Do this via Preferences > Color Scheme > Colorsublime Themes > Brainon.
+
+To associate all future .m (or .wl) files with the syntax, open a .m file and at the bottom right of the window, click Objective C (or whatever it is) to get a popup, select `Open all with current extension as ... > Mathematica`.
 
 For click-to-expand, you hold down control, and each successive click will move out one level in the AST. Its starts to break down when it hits the file-level, .tm syntaxer does shallow parsing and can't solve this problem properly.
 
