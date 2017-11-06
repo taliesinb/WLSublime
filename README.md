@@ -9,9 +9,9 @@
 
 ## Instructions
 
-In the unlikely event that you haven't already, start by installing Package Control. Then use it to install Colorsublime, which we'll use later to switch to Brainon, the custom theme that goes with the syntax definition.
+In the unlikely event that you haven't already, start by installing Package Control. Then use it to install Colorsublime, which we'll use later to switch to Brainon, the custom theme that goes with the syntax definition. You should also install ExpandRegion to make sure click-to-expand will work. To do that use CMD+Shift+P (or your OS equivalent), type Install Package, hit enter, and then enter ExpandRegion and hit enter. Then do the same for Colorsublime.
 
-No idea how you're *supposed* to share Sublime text packages, and I don't have time to find out, but colleagues want to use this, so here's how to do it on OS X assuming this repo is at "~/git/WLSublime", haven't actually tested this from-scratch though. If you already have a "Colorsublime - Themes" subfolder, then soft link in the "Brainon" subfolder of this repo into "Colorsublime - Themes". 
+Next we must install the custom packages in this repo. No idea how you're *supposed* to share Sublime text packages, and I don't have time to find out, but colleagues want to use this, so here's how to do it on OS X assuming this repo is at "~/git/WLSublime", haven't actually tested this from-scratch though. If you already have a "Colorsublime - Themes" subfolder, then soft link in the "Brainon" subfolder of this repo into "Colorsublime - Themes". 
 
 ```
 cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/
@@ -25,6 +25,7 @@ On Windows 10 you just have to copy the corresponding folders into `C:/Users/you
 Make sure to switch to use the Brainon color theme, it goes with the syntax. Do this via Preferences > Color Scheme > Colorsublime Themes > Brainon.
 
 To associate all future .m (or .wl) files with the syntax, open a .m file and at the bottom right of the window, click Objective C (or whatever it is) to get a popup, select `Open all with current extension as ... > Mathematica`.
+
 
 For click-to-expand, you hold down control, and each successive click will move out one level in the AST. Its starts to break down when it hits the file-level, .tm syntaxer does shallow parsing and can't solve this problem properly.
 
