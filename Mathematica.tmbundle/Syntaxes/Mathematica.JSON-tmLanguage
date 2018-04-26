@@ -633,7 +633,9 @@
     "foldingStartMarker": "Begin\\[", 
     "fileTypes": [
         "m", 
-        "nb"
+        "nb",
+        "wl",
+        "wls"
     ], 
     "name": "Mathematica", 
     "foldingStopMarker": "End\\["

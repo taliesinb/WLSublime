@@ -6,6 +6,8 @@
 	<array>
 		<string>m</string>
 		<string>nb</string>
+		<string>wl</string>
+		<string>wls</string>
 	</array>
 	<key>foldingStartMarker</key>
 	<string>Begin\[</string>
