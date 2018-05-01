@@ -13,9 +13,6 @@
             "include": "#top_level_definition"
         }, 
         {
-            "include": "#builtin_symbols"
-        }, 
-        {
             "include": "#gu_symbols"
         }, 
         {
@@ -29,6 +26,9 @@
         }, 
         {
             "include": "#line_declarations"
+        }, 
+        {
+            "include": "#builtin_symbols"
         }, 
         {
             "include": "#builtin_operators"

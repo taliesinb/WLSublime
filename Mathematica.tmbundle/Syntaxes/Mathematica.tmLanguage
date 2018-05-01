@@ -37,10 +37,6 @@
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#builtin_symbols</string>
-		</dict>
-		<dict>
-			<key>include</key>
 			<string>#gu_symbols</string>
 		</dict>
 		<dict>
@@ -58,6 +54,10 @@
 		<dict>
 			<key>include</key>
 			<string>#line_declarations</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#builtin_symbols</string>
 		</dict>
 		<dict>
 			<key>include</key>
