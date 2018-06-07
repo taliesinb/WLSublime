@@ -924,7 +924,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>^ *([a-zA-Z][a-zA-Z0-9]+::[a-z0-9]+) = ("[^"]+")</string>
+					<string>^[ 	]*([a-zA-Z][a-zA-Z0-9]+::[a-z0-9]+) = ("[^"]+")</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
