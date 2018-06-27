@@ -177,6 +177,47 @@
 
 		<dict>
 			<key>name</key>
+			<string>Non-existent symbol</string>
+			<key>scope</key>
+			<string>support.non-existent-symbol</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ffff00</string>
+				<key>background</key>
+				<string>#dd2211</string>
+				<key>fontStyle</key>
+				<string>bold</string>				
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Internal symbols</string>
+			<key>scope</key>
+			<string>support.internal-symbol</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				
+				<string>#3482a9</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>GeneralUtilities symbols</string>
+			<key>scope</key>
+			<string>support.utility-symbol</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#449299</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
 			<string>Package declarations</string>
 			<key>scope</key>
 			<string>meta.package-declaration</string>
@@ -202,6 +243,19 @@
 				<string>#cc5533</string>			
 			</dict>
 		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Fully qualified symbol</string>
+			<key>scope</key>
+			<string>support.fully-qualified-symbol</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#cc9522</string>			
+			</dict>
+		</dict>
+
 
 		<dict>
 			<key>name</key>
